@@ -7,7 +7,6 @@ Feature: #Test Amazon features
     Then Verify user is brought to Sign In page
 
 
-
   Scenario: HW problem 3 - verify that 'Your Amazon Cart is empty' message shows when clicking the cart.
      Given Open new Amazon page
      When Click on cart icon
