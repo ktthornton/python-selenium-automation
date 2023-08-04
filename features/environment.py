@@ -7,11 +7,11 @@ def browser_init(context):
     """
     :param context: Behave context
     """
-    driver_path = ChromeDriverManager().install()
-    service = Service(driver_path)
+    #driver_path = ChromeDriverManager().install()
+    service = Service(executable_path=r'C:\Users\ktknu\python-selenium-automation\chromedriver.exe')
     context.driver = webdriver.Chrome(service=service)
 
-    context.driver.maximize_window()
+    #context.driver.maximize_window()
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)

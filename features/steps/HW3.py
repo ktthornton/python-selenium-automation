@@ -15,7 +15,7 @@
 #-----Test case script-----
 from behave import given, when, then
 from selenium.webdriver.common.by import By
-
+from time import sleep
 
 #scenario 1/HW problem 2
 @given('Open new Amazon page')
@@ -31,7 +31,7 @@ def returns_and_orders(context):
 @then('Verify user is brought to Sign In page')
 def sign_in_page(context):
     expected_result_header = 'Sign in'
-    actual_result_header = context.diver.find_element(By.CSS_SELECTOR, 'h1[class=a-spacing-small]').text()
+    actual_result_header = context.driver.find_element(By.CSS_SELECTOR, 'h1[class="a-spacing-small"]').text()
 
     expected_result_email = 'Email or mobile phone number'
     actual_result_email = context.driver.find_element(By.CSS_SELECTOR, 'label[for="ap_email"]')
@@ -49,7 +49,7 @@ def cart_icon(context):
 @then("Verify 'Your Amazon Cart is empty' message displays")
 def cart_is_empty(context):
     expected_result_cart = 'Your Amazon Cart is empty'
-    actual_result_cart = context.driver.find_element(By.CSS_SELECTOR, '[h2*="Your Amazon Cart is empty"]').text()
+    actual_result_cart = context.driver.find_element(By.CSS_SELECTOR, '.a-row.sc-your-amazon-cart-is-empty').text()
 
     assert expected_result_cart == actual_result_cart, f'cart_is_empty error, expected {expected_result_cart} did not match actual {actual_result_cart}'
 
@@ -63,15 +63,20 @@ def amazon_search(context):
 
 @when('Add item to cart')
 def add_to_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR, '[alt*="Black Rifle Coffee Company Vanilla"]').click()
-    context.driver.find_element(By.CSS_SELECTOR, '.a-icon a-accordion-radio.a-icon-radio-inactive').click()
+    #select an item from the results list
+    context.driver.find_element(By.CSS_SELECTOR, '[alt*="Maxwell House Original Medium Roast Ground Coffee"]').click()
+
+    #click on 'One-time purchase' - may need to be removed based on Amazon...I keep going back and it oscillates between 'One-time purchase' already is selected instead of 'Subscribe & Save'.
+    context.driver.find_element(By.ID, 'newAccordionRow_0').click()
+
+    #click 'Add to Cart'
     context.driver.find_element(By.ID, 'add-to-cart-button').click()
 
 
 @then('Verify the item displays in the cart')
 def verify_cart(context):
     expected_text_result = 'Added to Cart'
-    actual_text_result = context.driver.find_element(By.CSS_SELECTOR, '.a-size-medium-plus a-color-base.sw-atc-text a-text-bold').text()
+    actual_text_result = context.driver.find_element(By.CSS_SELECTOR, '.a-size-medium-plus.a-color-base.sw-atc-text.a-text-bold').text()
 
     expected_cart_result = '1'
     actual_cart_result = context.driver.find_element(By.ID, 'nav-cart-count').text()
