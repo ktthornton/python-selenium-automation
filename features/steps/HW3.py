@@ -12,10 +12,12 @@
 #Sign in link - search by $$('[class*="signin"]')
 
 
+
 #-----Test case script-----
 from behave import given, when, then
 from selenium.webdriver.common.by import By
 from time import sleep
+
 
 #scenario 1/HW problem 2
 @given('Open new Amazon page')
@@ -66,7 +68,7 @@ def add_to_cart(context):
     #select an item from the results list
     context.driver.find_element(By.CSS_SELECTOR, '[alt*="Maxwell House Original Medium Roast Ground Coffee"]').click()
 
-    #click on 'One-time purchase' - may need to be removed based on Amazon...I keep going back and it oscillates between 'One-time purchase' already is selected instead of 'Subscribe & Save'.
+    #click on 'One-time purchase' - may need to be removed based on Amazon...I keep running the test and it oscillates between 'One-time purchase' already is selected instead of 'Subscribe & Save'.
     context.driver.find_element(By.ID, 'newAccordionRow_0').click()
 
     #click 'Add to Cart'
