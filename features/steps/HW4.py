@@ -27,7 +27,7 @@ def verify_best_seller_links(context):
     wait = WebDriverWait(context.driver, 10)
     wait.until(EC.visibility_of_all_elements_located(BEST_SELLER_LINKS))  # Wait for Page Load
     best_seller_links = context.driver.find_elements(*BEST_SELLER_LINKS)
-    assert len(best_seller_links) == 5
+    assert len(best_seller_links) == 5, f'Expected 5 elements but only found {len(best_seller_links)}'
 
 
 #scenario 2/HW problem 3
@@ -43,35 +43,14 @@ def verify_cs_elements(context):
     context.driver.find_element(*CS_SEARCH_BAR)
 
 
-    #verify the search and topics  headers both appear (using the same CSS selector to locate, but there should be 2)
+    #verify the search and topics headers both appear (using the same CSS selector to locate, but there should be 2)
     cs_text_header = context.driver.find_elements(*CS_TEXT_HEADER)
-    assert len(cs_text_header) == 2
+    assert len(cs_text_header) == 2, f'Expected 2 elements but only found {len(cs_text_header)}'
 
     # verify there are 11 directory links on the page
     cs_directory_links = context.driver.find_elements(*CS_DIRECTORY_LINKS)
-    assert len(cs_directory_links) == 11
+    assert len(cs_directory_links) == 11, f'Expected 11 elements but only found {len(cs_directory_links)}'
 
     # verfiy there are 11 help topic links on the page
     cs_topic_links = context.driver.find_elements(*CS_TOPICS_COLUMN)
-    assert len(cs_topic_links) == 11
-
-#-----
-
-
-# BEST_SELLER_LINKS = (By.CSS_SELECTOR, '[class*="_p13n-zg-nav-tab-all_style_zg-tabs-li"]')
-
-
-# @given('Open Amazon BestSellers page')
-# def open_best_sellers(context):
-#     context.driver.get('https://www.amazon.com/gp/bestsellers/?ref_=nav_cs_bestsellers')
-#
-#
-# @then('Verify 5 links display')
-# def verify_best_seller_links(context):
-#     sleep(10)
-#     # wait = WebDriverWait(context.driver, 10)
-#     # wait.until(EC.visibility_of_all_elements_located(BEST_SELLER_LINKS))  # Wait for Page Load
-#     best_seller_links = context.driver.find_elements(*BEST_SELLER_LINKS)
-#
-#     print("Number of links found:", len(best_seller_links))  # Print Debug Information
-#     assert len(best_seller_links) == 5
+    assert len(cs_topic_links) == 11, f'Expected 11 elements but only found {len(cs_topic_links)}'
