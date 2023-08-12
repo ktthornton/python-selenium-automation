@@ -6,7 +6,7 @@ from behave import given, then
 
 
 #-----locators-----
-BEST_SELLER_LINKS = (By.CSS_SELECTOR, '[class*="_p13n-zg-nav-tab-all_style_zg-tabs-li"]')
+BEST_SELLER_LINKS = (By.CSS_SELECTOR, '#zg_header a')
 CS_HEADER = (By.CSS_SELECTOR, 'h1[class="fs-heading bolded"]')
 CS_DIRECTORY_LINKS = (By.CSS_SELECTOR, '.fs-match-card-title.full')
 CS_TEXT_HEADER = (By.CSS_SELECTOR, 'h2[class="fs-heading bolded"]') #'Search our help library' and 'All help topics' headers
