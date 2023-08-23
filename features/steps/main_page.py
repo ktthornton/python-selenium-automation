@@ -15,13 +15,14 @@ SIGN_IN_POPUP = (By.CSS_SELECTOR, '#nav-signin-tooltip .nav-action-signin-button
 # -----steps-----
 @given('Open Amazon page')
 def open_amazon(context):
-    context.driver.get('https://www.amazon.com/')
-
+    # context.driver.get('https://www.amazon.com/')
+    context.app.main_page.open_main()
 
 @when('Search for {search_word}')
 def search_on_amazon(context, search_word):
-    context.driver.find_element(*SEARCH_FIELD).send_keys(search_word)
-    context.driver.find_element(*SEARCH_BUTTON).click()
+    # context.driver.find_element(*SEARCH_FIELD).send_keys(search_word)
+    # context.driver.find_element(*SEARCH_BUTTON).click()
+    context.app.header.search_product(product)
 
 
 # from HW3

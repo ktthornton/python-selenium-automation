@@ -34,19 +34,19 @@
 
 # ----- fizz buzz -----
 #time complexity is O(n)
-# def fizz_buzz():
-#     for i in range(1, 101):
-#         if i % 3 == 0 and i % 5 == 0:
-#             print('fizzbuzz')
-#         elif i % 5 == 0:
-#             print('buzz')
-#         elif i % 3 == 0:
-#             print('fizz')
-#         else:
-#             print(i)
+def fizz_buzz():
+    for i in range(1, 101):
+        if i % 3 == 0 and i % 5 == 0:
+            print('fizzbuzz')
+        elif i % 5 == 0:
+            print('buzz')
+        elif i % 3 == 0:
+            print('fizz')
+        else:
+            print(i)
 #
 #
-# fizz_buzz()
+fizz_buzz()
 
 # alternate - set a variable in the range and define the variable when calling the function
 # def fizz_buzz2(n):
