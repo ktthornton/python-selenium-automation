@@ -42,3 +42,16 @@ def verify_can_click_colors(context):
     assert actual_colors == expected_colors, f'Expected {expected_colors} did not match actual {actual_colors}'
 
 
+@when('Add item to cart')
+def add_to_cart(context):
+    # select an item from the results list
+    context.driver.find_element(By.CSS_SELECTOR, '[alt*="Maxwell House Original Medium Roast Ground Coffee"]').click()
+
+    # click on 'One-time purchase' - may need to be removed based on Amazon...
+    # I keep running the test and it oscillates between 'One-time purchase' already is selected instead of
+    # 'Subscribe & Save'.
+    context.driver.find_element(By.ID, 'newAccordionRow_0').click()
+
+    # click 'Add to Cart'
+    context.driver.find_element(By.ID, 'add-to-cart-button').click()
+

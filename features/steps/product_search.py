@@ -30,3 +30,9 @@ def click_search_icon(context):
 def verify_found_results_text(context, search_word):
     assert search_word.lower() in context.driver.current_url.lower(), \
         f'Expected query not in {context.driver.current_url.lower()}'
+
+
+@then('Search for an item')
+def amazon_search(context):
+    context.driver.find_element(By.ID, 'twotabsearchtextbox').send_keys('coffee')
+    context.driver.find_element(By.ID, 'nav-search-submit-button').click()
