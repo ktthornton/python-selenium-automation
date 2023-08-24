@@ -2,7 +2,6 @@ from pages.base_page import Page
 from selenium.webdriver.common.by import By
 
 
-
 class Header(Page):
     SEARCH_FIELD = (By.ID, 'twotabsearchtextbox')
     SEARCH_BUTTON = (By.ID, 'nav-search-submit-button')

@@ -38,3 +38,11 @@ Feature: Test for Amazon search
     Given Open Amazon page
     When Search for coffee
     Then Verify results have a product name and image
+
+
+  Scenario: Verify that a user can add an item to the cart
+     Given Open Amazon page
+     When Search for coffee
+     When Add item to cart
+     Then Verify added to cart message displays: Added to Cart
+     Then Verify 1 item displays in the cart

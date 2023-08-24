@@ -22,6 +22,7 @@ from selenium.webdriver.support import expected_conditions as EC
 @then('Verify user is brought to Sign In page')
 def verify_sign_in_page(context):
     # verify Sign in header is visible
-    context.driver.find_element(By.CSS_SELECTOR, 'h1[class="a-spacing-small"]')
-    # verify email input field is present
-    context.driver.find_element(By.ID, 'ap_email')
+    # context.driver.find_element(By.CSS_SELECTOR, 'h1[class="a-spacing-small"]')
+    # # verify email input field is present
+    # context.driver.find_element(By.ID, 'ap_email')
+    context.app.sign_in_page.verify_sign_in_page()
