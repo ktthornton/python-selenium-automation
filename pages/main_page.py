@@ -2,11 +2,12 @@ from pages.base_page import Page
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 
 
 class MainPage(Page):
     FOOTER_LINKS = (By.CSS_SELECTOR, '.navFooterDescItem')
-    SIGN_IN_POPUP = (By.CSS_SELECTOR, '#nav-signin-tooltip .nav-action-signin-button')
+    SIGN_IN_POPUP = (By.ID, 'nav-signin-tooltip')
     ORDERS_BUTTON = (By.ID, 'nav-orders')
     CART_ICON = (By.ID, 'nav-cart')
     SEARCH_INPUT = (By.NAME, 'q')
@@ -14,6 +15,8 @@ class MainPage(Page):
 
     def open_main(self):
         self.driver.get('https://www.amazon.com/')
+        sleep(2)
+        self.driver.refresh()
 
     def open_best_sellers(self):
         self.driver.get('https://www.amazon.com/gp/bestsellers/?ref_=nav_cs_bestsellers')

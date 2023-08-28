@@ -69,7 +69,7 @@ def generate_fibonacci_sequence(n: int):
     for i in range(2, n):
 
         # Calculate the next Fibonacci number using the formula fib_sequence[-1] + fib_sequence[-2]
-        fib_number = fib_sequence[-1] + fib_sequence[-2]
+        fib_number = fib_sequence[i-1] + fib_sequence[i-2]
 
         # Append the new Fibonacci number to the list using the append() function
         fib_sequence.append(fib_number)

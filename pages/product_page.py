@@ -1,5 +1,6 @@
 from pages.base_page import Page
 from selenium.webdriver.common.by import By
+from time import sleep
 
 
 class ProductPage(Page):
@@ -12,6 +13,8 @@ class ProductPage(Page):
 
     def open_amazon_product(self, product_id):
         self.driver.get(f'https://www.amazon.com/dp/{product_id}/')
+        sleep(2)
+        self.driver.refresh()
 
     def click_add_to_cart(self):
         self.driver.find_element(*self.ADD_TO_CART_BTN).click()

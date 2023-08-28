@@ -7,5 +7,8 @@ class SignInPage(Page):
     EMAIL = (By.ID, 'ap_email')
 
     def verify_sign_in_page(self):
-        self.find_element(*self.SIGN_IN_HEADER)
+        self.verify_text('Sign in', *self.SIGN_IN_HEADER)
         self.find_element(*self.EMAIL)
+        self.verify_partial_url('ap/signin')
+
+

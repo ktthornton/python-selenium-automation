@@ -11,9 +11,7 @@ class SearchResultPage(Page):
     PRODUCT_IMG = (By.CSS_SELECTOR, '.s-image[data-image-latency="s-product-image"]')
 
     def verify_search_result(self, expected_text):
-        actual_text = self.find_element(*self.SEARCH_RESULT).text
-        assert actual_text == expected_text,    \
-            f'Error, expected {expected_text} did not match actual {actual_text}'
+        self.verify_text(expected_text, *self.SEARCH_RESULT)
 
     def click_first_product(self):
         self.driver.find_element(*self.PRODUCT_PRICE).click()
