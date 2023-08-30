@@ -17,10 +17,10 @@ class Header(Page):
         self.click(*self.ORDERS_BTN)
 
     def click_signin_from_popup(self):
-        self.wait_for_element_clickable_click(*self.SIGN_IN_POPUP)
+        self.wait_for_element_clickable_click(self.SIGN_IN_POPUP)
 
     def verify_signin_btn_clickable(self):
-        self.wait_for_element_clickable(*self.SIGN_IN_POPUP)
+        self.wait_for_element_clickable(self.SIGN_IN_POPUP)
 
     def verify_signin_btn_disappears(self):
-        self.wait_for_element_disappear(*self.SIGN_IN_POPUP)
+        self.wait_for_element_disappear(self.SIGN_IN_POPUP)

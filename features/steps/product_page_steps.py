@@ -4,8 +4,8 @@ from behave import *
 # --- Locators ---
 # ADD_TO_CART_BTN = (By.ID, 'add-to-cart-button')
 # PRODUCT_NAME = (By.ID, 'productTitle')
-# COLOR_OPTIONS = (By.CSS_SELECTOR, "#variation_color_name li")
-# CURRENT_COLOR = (By.CSS_SELECTOR, "#variation_color_name .selection")
+COLOR_OPTIONS = (By.CSS_SELECTOR, "#variation_color_name li")
+CURRENT_COLOR = (By.CSS_SELECTOR, "#variation_color_name .selection")
 
 
 # --- Steps ---
@@ -30,21 +30,21 @@ def get_product_name(context):
 
 @then('Verify user can click through colors')
 def verify_can_click_colors(context):
-    # expected_colors = ['Bespoke Way (Blue)', 'Black', 'CUPIDS WAY (ROSEMARINE PINK/RED PLUM)', 'Green']
-    # actual_colors = []
-    #
-    # colors = context.driver.find_elements(*COLOR_OPTIONS)
-    #
-    # for color in colors:
-    #     color.click()
-    #     current_color = context.driver.find_element(*CURRENT_COLOR).text
-    #
-    #     actual_colors.append(current_color)
-    #
-    # assert actual_colors == expected_colors, f'Expected {expected_colors} did not match actual {actual_colors}'
-    context.app.product_page.verify_can_click_colors(
-        expected_colors=['Bespoke Way (Blue)', 'Black',
-                         'CUPIDS WAY (ROSEMARINE PINK/RED PLUM)', 'Green'])
+    expected_colors = ['Bespoke Way (Blue)', 'Black', 'CUPIDS WAY (ROSEMARINE PINK/RED PLUM)', 'Green']
+    actual_colors = []
+
+    colors = context.driver.find_elements(*COLOR_OPTIONS)
+
+    for color in colors:
+        color.click()
+        current_color = context.driver.find_element(*CURRENT_COLOR).text
+
+        actual_colors.append(current_color)
+
+    assert actual_colors == expected_colors, f'Expected {expected_colors} did not match actual {actual_colors}'
+    # context.app.product_page.verify_can_click_colors(
+    #     expected_colors=['Bespoke Way (Blue)', 'Black',
+    #                      'CUPIDS WAY (ROSEMARINE PINK/RED PLUM)', 'Green'])
 
 
 @when('Add item to cart')

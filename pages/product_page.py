@@ -6,8 +6,8 @@ from time import sleep
 class ProductPage(Page):
     ADD_TO_CART_BTN = (By.ID, 'add-to-cart-button')
     PRODUCT_NAME = (By.ID, 'productTitle')
-    COLOR_OPTIONS = (By.CSS_SELECTOR, "#variation_color_name li")
-    CURRENT_COLOR = (By.CSS_SELECTOR, "#variation_color_name .selection")
+    COLOR_OPTIONS = (By.ID, "inline-twister-expanded-dimension-text-color_name li")
+    CURRENT_COLOR = (By.ID, "inline-twister-expanded-dimension-text-color_name .selection")
     COFFEE_PRODUCT = (By.CSS_SELECTOR, '[alt*="Maxwell House Original Medium Roast Ground Coffee"]')
     ONE_TIME_PURCHASE = (By.ID, 'newAccordionRow_0')
 

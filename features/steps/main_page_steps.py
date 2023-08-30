@@ -108,6 +108,7 @@ def click_signin_from_popup(context):
     # breaking code like this makes it easier to read
     context.app.main_page.click_signin_from_popup()
 
+
 # @then('Verify Sign In page opened')
 
 
