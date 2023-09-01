@@ -160,3 +160,66 @@
 #
 # print(almost_palindrome("rakdar"))
 # print(almost_palindrome("rakidar"))
+
+
+# --- missing element in a list ---
+# l1 = [1, 2, 3, 4, 5]
+# l2 = [3, 2, 4, 1]
+#
+#
+# def missing_element(arr1, arr2):
+# time complexity is o(n) - linear
+#     arr1.sort()
+#     arr2.sort()
+#     # print(arr1)
+#     # print(arr2)
+#     for i in range(len(arr2) - 1):
+#         if arr1[i] != arr2[i]:
+#             (print(str(arr1[i]) + " is the missing element"))
+#             return i
+#     print(str(arr1[-1]) + " is the missing element") # needed for when missing element is the last element in the list
+#
+#
+# print(missing_element(l1, l2))
+
+
+# --- largest continuous sum ---
+# time complexity is O(n) - linear
+# def largest_continuous_sum(arr: list):
+#     current_sum = max_sum = arr[0]
+#
+#     for number in arr[1:]:
+#         current_sum = max(current_sum + number, number)
+#         max_sum = max(max_sum, current_sum)
+#
+#     return max_sum
+#
+#
+# test_list = [-4, 2, -1, 3, 4, 10, 10, -10, -1]
+# print(largest_continuous_sum(test_list))
+
+
+# --- mountain array ---
+
+
+# def mountain_array(arr: list):
+#     i = 1
+#     while i < len(arr) and arr[i - 1] < arr[i]:
+#         i += 1
+#
+#     if i == 1 or i == len(arr):
+#         return False
+#
+#     while i < len(arr) and arr[i - 1] > arr[i]:
+#         i += 1
+#
+#     if i == len(arr):
+#         return True
+#     else:
+#         return False
+#
+#
+# test_array = [1, 3, 4, 7, 5, 3]
+# test_array2 = [1, 4, 6, 8, 1, 9]
+# print(mountain_array(test_array))
+# print(mountain_array(test_array2))
