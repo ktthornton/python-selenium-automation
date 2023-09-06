@@ -18,11 +18,8 @@ Feature: Test for Main page UI
      Then Verify empty cart message displays: Your Amazon Cart is empty
 
 
-  Scenario: Verify Best Sellers UI
-    Given Open Amazon BestSellers page
-    Then Verify 5 links display
-
 
   Scenario: Verify Customer Service UI
     Given Open Amazon Customer Service page
     Then Verify UI elements
+

@@ -1,6 +1,7 @@
 from pages.base_page import Page
 from selenium.webdriver.common.by import By
 
+
 class CartPage(Page):
     CART_EMPTY_MSG = (By.CSS_SELECTOR, '.a-row.sc-your-amazon-cart-is-empty')
     ITM_ADDED_TO_CART = (By.CSS_SELECTOR, '.a-size-medium-plus.a-color-base.sw-atc-text.a-text-bold')

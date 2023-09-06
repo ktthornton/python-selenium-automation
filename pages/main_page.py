@@ -18,9 +18,6 @@ class MainPage(Page):
         sleep(2)
         self.driver.refresh()
 
-    def open_best_sellers(self):
-        self.driver.get('https://www.amazon.com/gp/bestsellers/?ref_=nav_cs_bestsellers')
-
     def open_customer_service(self):
         self.driver.get('https://www.amazon.com/gp/help/customer/display.html')
 

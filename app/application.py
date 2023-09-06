@@ -6,6 +6,9 @@ from pages.best_seller_page import BestSellerPage
 from pages.customer_service_page import CustomerServicePage
 from pages.sign_in_page import SignInPage
 from pages.product_page import ProductPage
+from pages.amazon_not_found_page import NotFoundPage
+from pages.amazon_blog import Blog
+from pages.amazon_terms_conditions_page import AmazonTermsConditions
 
 
 class Application:
@@ -19,6 +22,9 @@ class Application:
         self.customer_service_page = CustomerServicePage(driver)
         self.sign_in_page = SignInPage(driver)
         self.product_page = ProductPage(driver)
+        self.amazon_blog = Blog(driver)
+        self.amazon_not_found_page = NotFoundPage(driver)
+        self.amazon_terms_conditions_page = AmazonTermsConditions(driver)
 
 
 # app = Application()
