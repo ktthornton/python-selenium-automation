@@ -56,7 +56,7 @@ def count_larger_neighbors(arr: list):
     # Loop through the list from index 1 to len(arr) - 2. We skip the first and the last elements
     # because they don't have both left and right neighbors.
     for i in range(1, len(arr) - 1):
-        if arr[i] > arr[i-1]:
+        if arr[i] > arr[i-1] and arr[i] > arr[i+1]:
             count += 1
 # Check if the current element (arr[i]) is greater than its left neighbor (arr[i - 1])
 # and its right neighbor (arr[i + 1]).
