@@ -223,3 +223,58 @@
 # test_array2 = [1, 4, 6, 8, 1, 9]
 # print(mountain_array(test_array))
 # print(mountain_array(test_array2))
+
+
+# sum and multiplication in list
+# time complexity is O(n) linear
+# def sum_and_mult(arr: list):
+#     arr_sum = 0
+#     arr_mult = 1
+#
+#     for i in arr:
+#         arr_sum += i
+#         arr_mult *= i
+#
+#     print(arr)
+#     print([arr_sum, arr_mult])
+#
+#
+# sum_and_mult([1, 7, 3])
+
+
+# max item and index in a list
+# time complexity is O(n) linear
+# def find_max_number(arr: list):
+#     max_index = 0
+#     max_item = arr[0]
+#
+#     for i in range(1, len(arr)):
+#         if arr[i] > max_item:
+#             max_item = arr[i]
+#             max_index = i
+#
+#     return [max_index, max_item]
+#
+#
+# print(find_max_number([8, 2, 12, 3]))
+
+
+# sum between min and max elements
+# time complexity is O(n)
+# def sum_between_elements(arr: list):
+#     min_index = 0
+#     max_index = 0
+#
+#     for i in range(len(arr)):
+#         if arr[i] > arr[max_index]:
+#             max_index = i
+#
+#         if arr[i] < arr[min_index]:
+#             min_index = i
+#     # return [min_index, max_index]
+#     return sum(arr[min(min_index, max_index) + 1:max(min_index, max_index)])
+#
+#
+# print(sum_between_elements([1, 2, 3, 4, 5]))
+# print(sum_between_elements([5, 4, 3, 2, 1]))
+
