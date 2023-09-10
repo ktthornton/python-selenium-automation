@@ -23,3 +23,8 @@ Feature: Test for Main page UI
     Given Open Amazon Customer Service page
     Then Verify UI elements
 
+
+  Scenario: Verify language hover option
+    Given Open Amazon page
+    When Hover over language options
+    Then Verify Spanish option present

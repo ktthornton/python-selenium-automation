@@ -47,6 +47,12 @@ class Page:
     def wait_for_element_disappear(self, locator):
         self.wait.until(EC.invisibility_of_element_located(locator), message=f'Element did not disappear: {locator}')
 
+    def wait_for_element_appear(self, *locator):
+        self.wait.until(
+            EC.visibility_of_element_located(*locator),
+            message=f'Element did not appear: {locator}'
+        )
+
     def verify_partial_url(self, expected_partial_url):
         self.wait.until(EC.url_contains(expected_partial_url))
 

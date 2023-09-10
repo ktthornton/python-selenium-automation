@@ -42,3 +42,15 @@ Feature: Test for Amazon search
      When Add item to cart
      Then Verify added to cart message displays: Added to Cart
      Then Verify 1 item displays in the cart
+
+
+  Scenario Outline: User can select and search by department
+    Given Open Amazon page
+    When Select department by alias <dept_alias>
+    And Search for <search_word>
+    Then Verify <selected_dept> department is selected
+    Examples:
+    |dept_alias |search_word  |selected_dept  |
+    |stripbooks  |Faust  |books               |
+#    |audible     |non-fiction |audible        |
+

@@ -122,3 +122,19 @@ def wait_sec(context):
 @then('Verify Sign In disappears')
 def verify_signin_btn_disappears(context):
     context.app.header.verify_signin_btn_disappears()
+
+
+@when('Hover over language options')
+def hover_language(context):
+    context.app.header.hover_language()
+
+
+@then('Verify Spanish option present')
+def verify_spanish_lan(context):
+    context.app.header.verify_spanish_lan()
+
+
+@when('Select department by alias {dept}')
+def select_dept(context, dept):
+    context.app.header.select_dept(dept)
+
