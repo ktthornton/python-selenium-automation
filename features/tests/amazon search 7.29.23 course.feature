@@ -52,5 +52,5 @@ Feature: Test for Amazon search
     Examples:
     |dept_alias |search_word  |selected_dept  |
     |stripbooks  |Faust  |books               |
-#    |audible     |non-fiction |audible        |
-
+    |audible     |non-fiction |audible        |
+    |digital-music  |chris stapleton  |dmusic |

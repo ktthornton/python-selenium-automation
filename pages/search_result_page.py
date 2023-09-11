@@ -10,7 +10,7 @@ class SearchResultPage(Page):
     SEARCH_RESULTS = (By.CSS_SELECTOR, "[data-component-type='s-search-result']")
     PRODUCT_TITLE = (By.CSS_SELECTOR, 'h2 span.a-text-normal')
     PRODUCT_IMG = (By.CSS_SELECTOR, '.s-image[data-image-latency="s-product-image"]')
-    SUBHEADER_DEPT = (By.CSS_SELECTOR, 'data-category=["{SUB_STR}"]')
+    SUBHEADER_DEPT = (By.CSS_SELECTOR, '#nav-subnav[data-category="{SUB_STR}"]')
 
     def _get_subheader_dept_locator(self, dept):
         # return SUBHEADER_DEPT with {SUB_STR} replaced
@@ -34,6 +34,6 @@ class SearchResultPage(Page):
             assert product_title, 'Product title not shown'
             product.find_element(*self.PRODUCT_IMG)
 
-    # def verify_dept_selected(self, dept):
-    #     subheader_locator = self._get_subheader_dept_locator(dept)
-    #     self.find_element(*subheader_locator)
+    def verify_dept_selected(self, dept):
+        subheader_locator = self._get_subheader_dept_locator(dept)
+        self.wait_for_element_appear(subheader_locator)

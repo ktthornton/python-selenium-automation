@@ -60,3 +60,13 @@ def add_to_cart(context):
     # # click 'Add to Cart'
     # context.driver.find_element(By.ID, 'add-to-cart-button').click()
     context.app.product_page.add_to_cart()
+
+
+@when('Hover over New Arrivals menu item')
+def hover_menu_new_arrivals(context):
+    context.app.product_page.hover_menu_new_arrivals()
+
+
+@then('Verify New Arrivals menu is present')
+def verify_new_arrivals_menu(context):
+    pass

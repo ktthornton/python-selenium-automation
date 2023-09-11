@@ -38,6 +38,6 @@ def verify_results_name_img(context):
     context.app.search_result_page.verify_results_name_img()
 
 
-# @then('Verify {dept} department is selected')
-# def verify_dept_selected(context, dept):
-#     context.app.search_result_page.verify_dept_selected(dept)
+@then('Verify {dept} department is selected')
+def verify_dept_selected(context, dept):
+    context.app.search_result_page.verify_dept_selected(dept)

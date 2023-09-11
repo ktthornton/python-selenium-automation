@@ -5,3 +5,9 @@ Feature: Tests for product page
   Scenario: User can select colors
     Given Open Amazon product B07W45LYY8 page
     Then Verify user can click through colors
+
+
+  Scenario: User can view New Arrivals
+    Given Open Amazon product B074TBCSC8 page
+    When Hover over New Arrivals menu item
+    Then Verify New Arrivals menu is present

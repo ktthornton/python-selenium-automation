@@ -1,6 +1,8 @@
 from pages.base_page import Page
 from selenium.webdriver.common.by import By
 from time import sleep
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import Select
 
 
 class ProductPage(Page):
@@ -10,6 +12,9 @@ class ProductPage(Page):
     CURRENT_COLOR = (By.ID, "inline-twister-expanded-dimension-text-color_name .selection")
     COFFEE_PRODUCT = (By.CSS_SELECTOR, '[alt*="Maxwell House Original Medium Roast Ground Coffee"]')
     ONE_TIME_PURCHASE = (By.ID, 'newAccordionRow_0')
+    NEW_ARRIVALS = (By.CSS_SELECTOR, '.nav-a.nav-hasArrow[aria-label*="New Arrivals"]')
+    NEW_ARRIVALS_MENU = (By.ID,'nav-flyout-aj:https://m.media-amazon.com/images/G/01/Softlines/Store/MegaMenu/'
+                               'SPRING23/megamenucreator_spr23_v2_en_US.json:subnav-sl-megamenu-6:0')
 
     def open_amazon_product(self, product_id):
         self.driver.get(f'https://www.amazon.com/dp/{product_id}/')
@@ -40,3 +45,13 @@ class ProductPage(Page):
         # # I keep running the test and it oscillates between 'One-time purchase' already is selected instead of
         # # 'Subscribe & Save'.
         self.find_element(*self.ADD_TO_CART_BTN).click()
+
+    def hover_menu_new_arrivals(self):
+        actions = ActionChains(self.driver)
+        menu_selection = self.find_element(*self.NEW_ARRIVALS)
+        actions.move_to_element(menu_selection)
+        actions.perform()
+        sleep(3)
+
+    def verify_new_arrivals_menu(self):
+        self.wait_for_element_appear(self.NEW_ARRIVALS_MENU)
