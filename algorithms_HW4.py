@@ -43,24 +43,29 @@ def buy_and_sell_stock(prices: list):
 
 print(buy_and_sell_stock([7, 1, 5, 3, 6, 4]))
 
+
 # #4 increment a number
-# def plus_one(arr: list):
-#     # Add 1 to the last digit of the number
-#     arr[-1] += 1
-#
-#     # Loop through the array in reverse, starting from the second last element
-#     for i in reversed(range(1, len(arr))):
-#
-#         # If the current digit is not 10, there's no carry-over, and we can break the loop
-#         if arr[i] != 10:
-#             break
+def plus_one(arr: list):
+    # Add 1 to the last digit of the number
+    arr[-1] += 1
+    # Loop through the array in reverse, starting from the second last element
+    for i in reversed(range(1, len(arr))):
+        # If the current digit is not 10, there's no carry-over, and we can break the loop
+        if arr[i] != 10:
+            break
+        # Set the current digit to 0 because we have a carry-over
+        arr[i] = 0
+        # Add 1 to the preceding digit (i-1) to handle the carry-over
+        arr[i - 1] += 1
+        # Check if the most significant digit (first digit) has a carry-over
 
-    # Set the current digit to 0 because we have a carry-over
+    if arr[0] == 10:
+        # Set the first digit to 1
+        arr[0] = 1
+        # Append a 0 to the array to handle the carry-over from the most significant digit
+        arr.append(0)
 
-    # Add 1 to the preceding digit (i-1) to handle the carry-over
+    return arr
 
-    # Check if the most significant digit (first digit) has a carry-over
 
-    # Set the first digit to 1
-
-    # Append a 0 to the array to handle the carry-over from the most significant digit
+print(plus_one([1, 2, 9]))
