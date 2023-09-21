@@ -69,4 +69,4 @@ def hover_menu_new_arrivals(context):
 
 @then('Verify New Arrivals menu is present')
 def verify_new_arrivals_menu(context):
-    pass
+    context.app.product_page.verify_new_arrivals_menu()
