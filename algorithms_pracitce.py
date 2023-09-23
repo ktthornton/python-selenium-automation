@@ -278,3 +278,71 @@
 # print(sum_between_elements([1, 2, 3, 4, 5]))
 # print(sum_between_elements([5, 4, 3, 2, 1]))
 
+
+# def nested_loop_test(arr: list):
+#     for i in arr:
+#         for j in arr:
+#             print(i + j)
+#
+#
+# lst = ['a', 'b', 'c']
+# nested_loop_test(lst)
+
+
+# # nested loop
+# # time complexity -On^2
+# adj = ['red', 'ripe', 'tasty']
+# fruits = ['apple', 'banana', 'cherry']
+#
+#
+# def adj_fruits(arr1: list, arr2: list):
+#     for i in arr1:
+#         for j in arr2:
+#             print(i + ' ' + j)
+
+
+# adj_fruits(adj, fruits)
+
+
+# selection sort
+# time complexity is n^2
+# def selection_sort(arr: list):
+#     for i in range(len(arr)):
+#         min_index = i
+#         for j in range(i + 1, len(arr)):
+#             if arr[j] < arr[min_index]:
+#                 min_index = j
+#         arr[i], arr[min_index] = arr[min_index], arr[i]
+#     return arr
+#
+#
+# print(selection_sort([5, 4, 3, 2, 1]))
+
+
+# bubble sort
+# time complexity is n^2
+# def bubble_sort(arr: list):
+#     for i in range(len(arr)):
+#         for j in range(len(arr) - 1 - i):
+#             if arr[j] > arr[j + 1]:
+#                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
+#     return arr
+#
+#
+# print(bubble_sort([9, 7, 6, 2, 5]))
+
+
+# insertion sort
+# time complexity is n^2
+# def insertion_sort(arr: list):
+#     for i in range(1, len(arr)):  # start at index 1 because we assume the first element is already sorted
+#         key = arr[i]
+#         j = i - 1
+#         while j >= 0 and key < arr[j]:
+#             arr[j + 1] = arr[j]
+#             j -= 1
+#         arr[j + 1] = key
+#     return arr
+#
+#
+# print(insertion_sort([5, 3, 2, 1, 6]))
