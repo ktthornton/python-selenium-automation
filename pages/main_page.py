@@ -12,6 +12,7 @@ class MainPage(Page):
     CART_ICON = (By.ID, 'nav-cart')
     SEARCH_INPUT = (By.NAME, 'q')
     SEARCH_SUBMIT = (By.NAME, 'btnK')
+    CUSTOMER_SERVICE = (By.CSS_SELECTOR, 'a[href*="nav_cs_fs_hub_navbar_c"]')
 
     def open_main(self):
         self.driver.get('https://www.amazon.com/')
@@ -19,7 +20,7 @@ class MainPage(Page):
         self.driver.refresh()
 
     def open_customer_service(self):
-        self.driver.get('https://www.amazon.com/gp/help/customer/display.html')
+        self.driver.find_element(*self.CUSTOMER_SERVICE).click()
 
     def verify_footer_link_amount(self, expected_amount):
         expected_amount = int(expected_amount)

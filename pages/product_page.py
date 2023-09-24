@@ -13,7 +13,7 @@ class ProductPage(Page):
     COFFEE_PRODUCT = (By.CSS_SELECTOR, '[alt*="Maxwell House Original Medium Roast Ground Coffee"]')
     ONE_TIME_PURCHASE = (By.ID, 'newAccordionRow_0')
     NEW_ARRIVALS = (By.CSS_SELECTOR, '.nav-a.nav-hasArrow[aria-label*="New Arrivals"]')
-    NEW_ARRIVALS_MENU = (By.CSS_SELECTOR, '.nav-fullWidthSubnavFlyout.nav-flyout')
+    NEW_ARRIVALS_MENU = (By.CSS_SELECTOR, "a[href*='fashion-luggage&bbn']")
 
     def open_amazon_product(self, product_id):
         self.driver.get(f'https://www.amazon.com/dp/{product_id}/')

@@ -23,6 +23,7 @@ from time import sleep
 @given('Open Amazon Customer Service page')
 def open_customer_service(context):
     # context.driver.get('https://www.amazon.com/gp/help/customer/display.html')
+    context.app.main_page.open_main()
     context.app.main_page.open_customer_service()
 
 
