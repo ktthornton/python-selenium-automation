@@ -346,3 +346,14 @@
 #
 #
 # print(insertion_sort([5, 3, 2, 1, 6]))
+
+
+def generate_fibonacci_sequence(n: int):
+
+    fib_sequence = [0]
+
+    for i in range(1, n):
+        next_fib = fib_sequence[-1] - fib_sequence[-2]
+        fib_sequence.append(next_fib)
+
+    return fib_sequence[-1]
